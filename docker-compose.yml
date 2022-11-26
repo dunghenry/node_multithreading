@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  backend:
+    container_name: node_multithreading
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    volumes:
+      - './src:/app/src'
+      - './workers:/app/workers'
